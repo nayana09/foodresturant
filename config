@@ -1,0 +1,13 @@
+[core]
+	repositoryformatversion = 0
+	filemode = false
+	bare = false
+	logallrefupdates = true
+	symlinks = false
+	ignorecase = true
+[remote "happytummybanglore"]
+	url = https://git.heroku.com/foodresturant.git
+	fetch = +refs/heads/*:refs/remotes/happytummybanglore/*
+[remote "heroku"]
+	url = https://git.heroku.com/foodresturant.git
+	fetch = +refs/heads/*:refs/remotes/heroku/*

@@ -1,0 +1,109 @@
+{% extends 'base.html' %}
+
+{% block head %} 
+<title> HAPPY TUMMY BANGLORE </title>
+{% endblock %}
+
+{% block body %} 
+<h1 class="head"> HAPPY TUMMY BANGLORE <span style='font-size:50px;'>&#128523;</span></h1>
+<section class="menu">
+    <form class ="form-font" action="/" method="POST">
+    <div class="scrollmenu">
+        <a href="">
+            <img src="/static/styles/images/masaladosa.jpg"><br>
+            <input type="text" name ="content" id="content" value="Masala Dosa&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;30Rs">
+          
+        </a>
+           
+           <a href="">
+            <img src="/static/styles/images/sandwitch.jpg"><br>
+            <input type="text" name ="content" id="content" value="Sandwitch&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;60Rs">
+             
+            </a>
+        <a href="">  
+            <img src="/static/styles/images/masale-puri-recipe17.jpg"><br>
+             <input type="text" name ="content" id="content" value="Masal Puri&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;30Rs">
+            </a>
+        <a href="">  <img src="/static/styles/images/panipuri.jpg"><br>
+             <input type="text" name ="content" id="content" value="Pani Puri&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;30Rs">
+           
+        <a href="">
+            <img src="/static/styles/images/ravaidli.jpg"><br>
+           <input type="text" name ="content" id="content" value="ravaidli&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;30Rs">
+        </a>
+        <a href="">
+            <img src="/static/styles/images/samosa-recipe-500x500.jpg"><br>
+            <input type="text" name ="content" id="content" value="Somosa&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;30Rs">
+        </a>
+        <a href="">
+            <img src="/static/styles/images/sandwitch.jpg"><br>
+            <input type="text" name ="content" id="content" value="Sandwitch&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;60Rs">
+        </a>
+        <a href="">
+            <img src="/static/styles/images/idly.jpg"><br>
+            <input type="text" name ="content" id="content" value="Idli&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;50Rs">
+        </a>
+        <a href="">
+            <img src="/static/styles/images/meals.jfif"><br>
+            <input type="text" name ="content" id="content" value="South Meals&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;100Rs">
+        </a>
+        <a href="">
+            <img src="/static/styles/images/parata.jpg"><br>
+            <input type="text" name ="content" id="content" value="Parata&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;50Rs">
+        </a>
+        <a href="">
+            <img src="/static/styles/images/pongal.jpg"><br>
+            <input type="text" name ="content" id="content" value="Pongal&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;30Rs">
+        </a>
+        <a href="">
+            <img src="/static/styles/images/fish.jfif"><br>
+            <input type="text" name ="content" id="content" value="Fish Fry&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;180Rs">
+        </a>
+        <a href="">
+            <img src="/static/styles/images/images.jfif"><br>
+            <input type="text" name ="content" id="content" value="Noodles&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;140Rs">
+        </a>
+        <a href="">
+            <img src="/static/styles/images/jamun.jpg"><br>
+            <input type="text" name ="content" id="content" value="Jamun&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;30Rs">
+        </a>
+        
+      </div>
+    </form>
+</section>
+   
+<section>
+    <div class="container">
+    <div class= "content">
+        <table class ="tab_col" border="1">
+            <tr>
+                <th>Order Number</th>
+                <th>Order Date</th>
+                <th>Order time</th>
+                <th>Dish Name</th>
+                <th>Action</th>
+            </tr>
+            {% for task in tasks %}
+            <tr>
+                <td>{{ task.id }}</td>
+                <td>{{ task.date_added.date() }}</td>
+                <td>{{ task.date_added.time() }}</td>
+                <td>{{ task.content }}</td>
+                <td><a href="/delete/{{task.id}}">Order Taken</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    <br>
+        <form action="/" method="POST">
+            <input type="text" name ="content" id="content1">
+            <input type = "submit" value = "ADD DISH">
+        </form>
+        
+        
+    </div>
+</div>
+</section>
+
+
+{% endblock %}
